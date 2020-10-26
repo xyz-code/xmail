@@ -1,4 +1,4 @@
-# xmail3
+# supermall
 
 ## Project setup
 ```
