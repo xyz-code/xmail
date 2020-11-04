@@ -22,7 +22,8 @@
     },
     methods: {
       imageLoad() {
-        this.$bus.$emit('itemImageLoad')
+        //事件总线
+        this.$bus.$emit('itemImageLoad') 
       },
       itemClick() {
         this.$router.push('/detail/' + this.goodsItem.iid)

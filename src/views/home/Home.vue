@@ -35,6 +35,7 @@
   import BackTop from 'components/content/backTop/BackTop'
 
   import { getHomeMultidata, getHomeGoods } from "network/home"
+  //防抖函数，debounce 节流函数
   import {debounce} from "common/utils";
 
   export default {
@@ -74,10 +75,12 @@
       console.log('home destroyed');
     },
     activated() {
+      //进入时，转到之前已存储的位置
       this.$refs.scroll.scrollTo(0, this.saveY, 0)
       this.$refs.scroll.refresh()
     },
     deactivated() {
+      //离开时，保存离开的位置
       this.saveY = this.$refs.scroll.getScrollY()
     },
     created() {
@@ -91,6 +94,7 @@
     },
     mounted() {
       // 1.图片加载完成的事件监听
+      //如果直接指向refresh函数，会执行30次，使用debounce会降低执行次数，
       const refresh = debounce(this.$refs.scroll.refresh, 50)
       this.$bus.$on('itemImageLoad', () => {
         refresh()

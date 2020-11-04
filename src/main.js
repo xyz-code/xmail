@@ -4,6 +4,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+//原型，作为事件总线
 Vue.prototype.$bus = new Vue()
 
 new Vue({

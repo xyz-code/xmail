@@ -53,6 +53,7 @@
     },
     methods: {
       scrollTo(x, y, time=300) {
+        //先判断是否有值，避免加载太快，scroll还为空时执行报错
         this.scroll && this.scroll.scrollTo(x, y, time)
       },
       refresh() {
