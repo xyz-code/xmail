@@ -22,7 +22,7 @@
     },
     methods: {
       imageLoad() {
-        //事件总线
+        //事件总线 Vue.prototype.$bus = new Vue()
         this.$bus.$emit('itemImageLoad') 
       },
       itemClick() {
